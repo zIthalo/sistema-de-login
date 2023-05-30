@@ -1,0 +1,96 @@
+:root{
+    --cor0: #1493dc;
+    --cor1: #113647;
+    --cor3:#c5ebd6;
+    --cor4:#83e1ad;
+    --cor5:#3ddc84;
+    --cor6:#2fa866;
+    --cor7:#1a5c37;
+    --cor8:#063d1e;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, var(--cor0), var(--cor1) );
+    color: white;
+}
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;/*-50% no eixo x e -50% no eixo y*/
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 15px;
+    min-width: 50vh;
+    color: white;
+}
+fieldset{
+    border: 3px solid;
+    border-radius: 5px;
+}
+legend{
+    border: 1px solid dodgerblue;
+    padding: 10px;
+    text-align: center;
+    background-color: dodgerblue;
+    border-radius: 8px;
+}
+.inputBox{
+    position: relative;
+}
+.inputUser{
+    color: white;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white; /*borda em baixo*/
+    outline: none; /*para tirar aquela borda que surge quando clicamos em um input*/
+    font-size: 1.3em;
+    width: 100%; /*para o campo dos inputs atigirem sempre a largura máxima da caixa*/
+    letter-spacing: 2px; /*serve para dar umm espaçamento entre as letras que serão digitadas dentro de um input*/
+}
+.labelInput{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+}
+.inputUser:focus ~.labelInput,
+.inputUser:valid ~ .labelInput{/*Quando o input user estiver focado e quando ele está validado , ou seja, quando tiver algum dado nele faça isto ↓↓*/
+    top: -20px;
+    font-size: 12px;
+    color: dodgerblue;
+}
+#dataNasc{
+    outline: none;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+}
+
+#submit{
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+    background-image: linear-gradient(to right, var(--cor0), var(--cor1) );
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0;
+    transition-duration: .3s;
+}
+#submit:hover{
+    background-image: linear-gradient(to right, #0050ac, #5013c3);
+    font-weight: normal;
+}
+#masculino, #feminino, #outro{
+    cursor: pointer;
+    margin-bottom: 7px;
+}
+input{
+    margin-bottom: 20px;
+}

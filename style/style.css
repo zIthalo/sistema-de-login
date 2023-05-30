@@ -1,0 +1,575 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/*Rsta é uma fonte importada do google fonts, para pegar foi preciso escolher a fonte, clicar no canto superior da tela, escolher a opção @import, copiar o código e depois copiar as css rules (font-family) */
+
+@font-face {
+    font-family: 'Android';
+    src: url(../fontes/idroid.otf) format('opentype');
+    font-weight: normal;
+
+}
+:root { /*A pseudo classe (:root)é utilizada para declarar variáveis em css que vão ajudar muito caso um projeto mudar. Se por exemplo a cor de um h1 h2 mudar, você não precisará mais mudar a cor de um por um manualmente, somente mude a variável e você vai fazer as devidas alterações*/
+    --cor0:#c5ebd6;
+    --cor1:#83e1ad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#063d1e;
+/*para declarar uma variável você coloca esta estrutura: --nomedavar:; no caso acima são variáveis para cor no caso abaixo são variáveis para fontes*/
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+*{/*configuração global*/
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    background-color: var(--cor5);
+}
+ul li{
+    display: inline-block;
+    position: relative;
+}
+
+ul li a{
+    display: block;
+    padding: 20px 25px;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+ul li ul.dropdown li{
+    display: block;
+}
+
+ul li ul.dropdown{
+    width: 100%;
+    background-color: var(--cor5);
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+ul li:hover ul.dropdown{
+    display: block;
+}
+body{
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+
+}
+
+a.externo::after{
+    content: '\00a0\1F517'; /*este comando irá dar um espaço e adicionar um símbolo que peguei na emojipedia*/
+}
+
+#log{
+
+    color: white;
+    display: flex;
+    font-size: 1rem;
+    background: var(--cor3);
+    justify-content: end;
+    padding: 20px;
+    /* position: relative; */
+    align-items: center;
+}
+
+#l1, #l2{
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.btn-log{
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: var(--cor4);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    outline: none;
+}
+.btn-log:hover{
+    transition: .3s;
+    color: var(--cor5);
+    background-color: var(--cor2);
+}
+
+
+#cabeçalho{
+
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));/*Degradê de cor para ficar escurecida de cima para baixo*/
+    min-height: 150px;
+    text-align: center;
+    padding-top: 32px;
+    
+}
+
+    #cabeçalho > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    padding: 20px; /*Espaçamento entre título e texto*/
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.418); /*Este comando serve para colocar sombra no texto, não confunda nunca text shadow com box shadow. Se quiser colocar sombra somente no texto use text-shadow se quiser colar na caixa inteira aí é o box-shadow*/
+
+    }
+    
+    #cabeçalho > p{
+        font-family: var(--fonte-padrao);
+        font-size: 1.2em;
+        color: white;
+        max-width: 500px;
+        margin: auto;
+        padding-right: 10px; /*estes comandos foram usados para quando um texto ficar em uma tela menor eles não fiquem grudados nas bordas da tela*/
+        padding-left: 10px;
+        padding-bottom: 20px;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.418);
+    } 
+    #header{
+        box-sizing: border-box;
+        height: 4.35rem;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--cor5); 
+    }
+    
+    #logo{
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--cor1);
+    }
+#menu{
+    padding: 10px;
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+#menu a{
+    display: block;
+    padding: .5rem;
+    text-decoration: none;
+    color: var(--cor1);
+    font-weight: bold;
+    transition: .3s;
+}
+
+#menu a:hover{
+    background: var(--cor2);
+    border-radius: .4rem;
+    color: var(--cor5);
+}
+
+#btn-mobile{
+    display: none;
+}
+
+main{
+    background-color: white;
+    min-width: 300px;/*tamanho mínimo*/
+    max-width: 1000px;/*tamanho máximo*/
+    margin: auto;/*Centralizar*/
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.73);
+    margin-bottom: 20px;
+    border-bottom-left-radius: 10px; /*para que serve isto? Serve para deixar somente um lado da tag arredondado, neste caso coloquei o lado de baixo esquerdo. no código abaixo eu fiz a mesma coisa sendo que ao invés do lado baixo esquerdo eu fiz o lado baixo direito*/
+    border-bottom-right-radius: 10px;
+}
+
+main h1{
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+}
+
+
+main p{
+    margin: 15px 0px;/*Quando a gente configura um margin ou padding somente com 2 valores significa: cima-baixo e direita-esquerda ou seja linha x e linha y, ou seja vertical e horizontal*/
+    text-align: justify;
+    text-indent: 30px; /*Serve para dar Afastamento inicial de cada parágrafo*/
+    line-height: 2em; /*Seve para dar Afastamento entre linhas de texto*/
+    font-size: 1.2em;
+}
+
+main h2{
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.3em;
+    color: var(--cor5);
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 8px;
+}
+
+main strong{
+    color: var(--cor5);
+    font-weight: bold;
+}
+
+main a{ /*Quando eu quiser especificar que é só um link dentro MESMO da tag main eu usarei o sinal de maior que > se eu quiser editar todos os links que estiverem dentro da tag main eu não coloco o sinal*/
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+    border-radius: 5px;
+    transition-duration: .3s;
+}
+
+main a:hover{
+    background-color: var(--cor5);
+    color: var(--cor0);
+    border-radius: 5px;
+    text-decoration: underline;
+}
+
+main img{
+    width: 100%; /*Este comando fará as minhas imagens caberem 100% dentro da minha tag main, ou seja, não vão ficar vazadas saindo da tag*/
+}
+
+main img.bug{
+    max-width: 350px; /*este Max width é usado para deixar uma imágem no seu tamanho máximo para, quando a tela for grande a imagem não ficar embaçada e nem quandop a tela for pequena a imagem ficar pequena demais.*/
+    margin: auto;
+    display: block; /*se eu colocasse somente margin auto em uma imagem não funcionaria para centralizar ela pois uma imagem é considerada um inline-box, com isso foi preciso colocar o display block para poder transformá-la em block e poder centralizar ela com o margin auto*/
+}
+
+div.video{
+    background-color: var(--cor5);
+    margin: 0px 20px 30px -5px;
+    padding: 20px;
+    padding-bottom: 57%;
+    position: relative; /*usei este comando para  trazer o video para frente*/
+}
+
+div.video > iframe{
+    position: absolute; /*Se não for absolute o video fica fino e bugado*/
+    top: 5%; /*forma de organizar o video mais acima*/
+    left: 5%; /*forma de adequar o video mais a esquerda*/
+    width: 90%;
+    height: 90%;
+    
+}
+aside{
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.274);
+}
+
+aside > h3{
+    background-color: var(--cor4);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px; /*Esta margin negativa serviu para encaixar o h3 bem rente ao bloco do asideparecendo que o aside já começava de outra cor*/
+    border-radius: 10px 10px 0px 0px; /*A ordem deste border radius está assim 10px acima esquerda 10px acima direita 0px abaixo direita 0px abaixo esquerda*/
+}
+aside > ul{
+    list-style-type:'\2714\00a0';/*para quê serviu este código? O \2714 foi o código do emoji de check e o \00a0 é um código para dar espaço entre o check e o conteúdo da lista*/
+    list-style-position: inside; /*colocar os marcadores dentro da caixa do aside*/
+    columns: 2; /*dividi a lista em duas colunas*/
+}
+
+/* footer{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    font-family: var(--fonte-padrao);
+    font-weight: bold;
+    font-size: .8em;
+    justify-content: space-between;
+}
+
+footer > p{
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: bolder;
+    margin-top: 10px;
+    text-align: justify;
+    display: block;
+    
+}
+
+footer >h3{
+    font-size: 1.2rem;
+    padding-top: 2%;
+    margin-right: 40%;
+} */
+
+.dev{
+    margin-left: 50%;
+    padding: 10px;
+}
+/* footer > p > a{ /*funciona normalmente desde que tenham estas tags dentro de footer
+    color: var(--cor0);
+    text-decoration: none;
+    font-family: var(--fonte-padrao);
+    transition-duration: .3s;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 3px;
+}
+footer > p > a:hover{
+    background-color: var(--cor0);
+    color: var(--cor5);
+    border-radius: 3px;
+    padding: 10px;
+} */
+.map{  
+    padding: 20px;
+    display: block;
+    margin: auto;
+
+}
+
+/*----------------------Slider----------------------*/
+
+footer{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor0);
+} 
+
+footer a {
+    text-decoration: none;
+    color: #FFF;
+}
+.slide-container{
+    max-width: 1120px;
+    width: 100%;
+    padding:40px 0;
+}
+.slide-content{
+    margin: 0 40px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+.card{
+    
+    border-radius: 25px;
+    background-color: #FFF;
+}
+.image-content,
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+    background-color: #FFF;
+}
+.image-content{
+    /* background-color: #FFF; */
+    position: relative; 
+    row-gap: 5px;
+    padding: 25px 0; 
+    border-radius: 25px 25px 0 25px;
+}
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0 ;
+    height: 100%;
+    width: 100%;
+    background-color: #4070f4;
+    border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: #4070f4;
+}
+.overlay::after{
+    border-radius: 0 25px 0 0;
+    background-color: #FFF;
+}
+.card-image{
+    position:relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: #FFF;
+    padding: 3px;
+}
+
+.card-image .card-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #4070f4;
+}
+.name{
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+.description{
+    font-size: 14px;
+    color: #707070;
+    text-align: center;
+    z-index: 1;
+}
+.button{
+    border: none;
+    font-size: 16px;
+    color: #FFF;
+    padding: 8px 16px;
+    background-color: #4070f4;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover{
+    background: #265DF2;
+}
+
+.swiper-navBtn{
+    color: #6e93f7;
+    transition: color .3s ease;
+}
+.swiper-navBtn:hover{
+    color: #4070f4;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+    font-size: 40px;
+}
+.swiper-button-next{
+    right: 0;
+}
+.swiper-button-prev{
+    left: 0;
+}
+.swiper-pagination-bullet{
+    background-color: #6e93f7;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active{
+    background-color: #4070f4;
+}
+
+@media screen and (max-width: 768px){
+    .slide-content{
+        margin: 0 90px;
+    }
+    .swiper-navBtn{
+        display: none;
+    }
+}
+
+/*----------------------Slider----------------------*/
+
+/*----------------------Bruguer Menu----------------------*/
+@media (max-width: 660px){
+    #menu{
+        display: block; /*Com display block cada link ocupa a sua linha, já com flex todos os itens ocupam uma só linha horizontal*/ 
+        position: absolute;
+        width: 100%;
+        right: 0px;
+        background: var(--cor5);
+        height: 0;
+        transition: .6s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+        
+    }
+    #nav.active #menu{
+        position: absolute;   
+        visibility: visible;
+        overflow-y: auto;
+        height: calc(100vh - 70px);   
+    }
+    #menu a{
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    }
+    #btn-mobile{
+        color: var(--cor1);
+        display: flex;
+        padding: .5rem 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+    #burguer{
+        margin-left: 5px;
+        border-top: 2px solid;
+        width: 20px;
+    }
+    #burguer::after, #burguer::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #burguer{
+        border-top-color: transparent;
+    }
+    #nav.active #burguer::before{
+        transform: rotate(135deg);
+    }
+    #nav.active #burguer::after{
+        transform: rotate(-135deg);
+        top: -7px;
+        
+    }
+    .map{
+        max-width: 353px;
+        position: relative;
+        padding: 16px;
+        left: -6%;
+    }
+}
+
+/*----------------------Bruguer Menu----------------------*/
+
+
+/* nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.308);/*Nunca confunda este comando com text-shadow*/
+/*}
+
+nav > ul > li > a{
+    color: var(--cor2);
+    padding: 10px;
+    text-decoration: none;/*para tirar o underline*/
+    /*font-weight: bold;
+    transition-duration: .3s;
+    /*para que serve o comando trasition duration? Serve para fazer a transição de animação do link do nav normal para o link do nav hover (Quando o mouse passar por cima)*/ 
+/*}
+
+nav > ul > li > a:hover{ /*quando o mouse passar por cima...*/
+/*    background-color: var(--cor1);
+    color: var(--cor4);
+    border-radius: 6px;
+
+} */
