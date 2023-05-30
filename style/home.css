@@ -1,0 +1,46 @@
+:root{
+    --cor0: #1493dc;
+    --cor1: #113647;
+    --cor3:#c5ebd6;
+    --cor4:#83e1ad;
+    --cor5:#3ddc84;
+    --cor6:#2fa866;
+    --cor7:#1a5c37;
+    --cor8:#063d1e;
+}
+*{
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 30px auto;
+    max-width: 590px;
+    background: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+    text-align: center;
+    color: white;
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    border: 3px solid dodgerblue;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+a:hover {
+    background-color: dodgerblue;
+}
