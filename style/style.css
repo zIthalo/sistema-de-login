@@ -27,17 +27,17 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
-ul {
+/*-------------------DROPDOWN------------------*/
+/* ul.dropdown {
     list-style: none;
     background-color: var(--cor5);
 }
-ul li{
+ul.dropdown li.dp-list{
     display: inline-block;
     position: relative;
 }
 
-ul li a{
+ul.dropdown li.dp-list a{
     display: block;
     padding: 20px 25px;
     color: #FFF;
@@ -59,7 +59,8 @@ ul li ul.dropdown{
 }
 ul li:hover ul.dropdown{
     display: block;
-}
+} */
+/*-------------------DROPDOWN------------------*/
 body{
     background-color: var(--cor0);
     font-family: var(--fonte-padrao);
@@ -102,11 +103,13 @@ a.externo::after{
     color: var(--cor5);
     background-color: var(--cor2);
 }
+#nav1{
+    width: 100%;
+}
 
+/* #cabeçalho{
 
-#cabeçalho{
-
-    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));/*Degradê de cor para ficar escurecida de cima para baixo*/
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));Degradê de cor para ficar escurecida de cima para baixo
     min-height: 150px;
     text-align: center;
     padding-top: 32px;
@@ -118,8 +121,8 @@ a.externo::after{
     font-family: var(--fonte-destaque);
     font-size: 3em;
     font-weight: normal;
-    padding: 20px; /*Espaçamento entre título e texto*/
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.418); /*Este comando serve para colocar sombra no texto, não confunda nunca text shadow com box shadow. Se quiser colocar sombra somente no texto use text-shadow se quiser colar na caixa inteira aí é o box-shadow*/
+    padding: 20px; Espaçamento entre título e texto
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.418); Este comando serve para colocar sombra no texto, não confunda nunca text shadow com box shadow. Se quiser colocar sombra somente no texto use text-shadow se quiser colar na caixa inteira aí é o box-shadow
 
     }
     
@@ -129,12 +132,12 @@ a.externo::after{
         color: white;
         max-width: 500px;
         margin: auto;
-        padding-right: 10px; /*estes comandos foram usados para quando um texto ficar em uma tela menor eles não fiquem grudados nas bordas da tela*/
+        padding-right: 10px; estes comandos foram usados para quando um texto ficar em uma tela menor eles não fiquem grudados nas bordas da tela
         padding-left: 10px;
         padding-bottom: 20px;
         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.418);
-    } 
-    #header{
+    }  */
+    /* #header{
         box-sizing: border-box;
         height: 4.35rem;
         padding: 1rem;
@@ -142,15 +145,15 @@ a.externo::after{
         align-items: center;
         justify-content: space-between;
         background: var(--cor5); 
-    }
+    } */
     
-    #logo{
+    /* #logo{
         font-size: 1.5rem;
         font-weight: bold;
         text-decoration: none;
         color: var(--cor1);
-    }
-#menu{
+    } */
+/* #menu{
     padding: 10px;
     display: flex;
     list-style: none;
@@ -175,7 +178,7 @@ a.externo::after{
 
 #btn-mobile{
     display: none;
-}
+} */
 
 main{
     background-color: white;
@@ -275,7 +278,7 @@ aside > h3{
     margin: -10px -10px 0px -10px; /*Esta margin negativa serviu para encaixar o h3 bem rente ao bloco do asideparecendo que o aside já começava de outra cor*/
     border-radius: 10px 10px 0px 0px; /*A ordem deste border radius está assim 10px acima esquerda 10px acima direita 0px abaixo direita 0px abaixo esquerda*/
 }
-aside > ul{
+aside > #lista-android{
     list-style-type:'\2714\00a0';/*para quê serviu este código? O \2714 foi o código do emoji de check e o \00a0 é um código para dar espaço entre o check e o conteúdo da lista*/
     list-style-position: inside; /*colocar os marcadores dentro da caixa do aside*/
     columns: 2; /*dividi a lista em duas colunas*/
@@ -481,9 +484,9 @@ footer a {
 /*----------------------Slider----------------------*/
 
 /*----------------------Bruguer Menu----------------------*/
-@media (max-width: 660px){
+/* @media (max-width: 660px){
     #menu{
-        display: block; /*Com display block cada link ocupa a sua linha, já com flex todos os itens ocupam uma só linha horizontal*/ 
+        display: block; Com display block cada link ocupa a sua linha, já com flex todos os itens ocupam uma só linha horizontal
         position: absolute;
         width: 100%;
         right: 0px;
@@ -547,7 +550,7 @@ footer a {
         padding: 16px;
         left: -6%;
     }
-}
+} */
 
 /*----------------------Bruguer Menu----------------------*/
 
